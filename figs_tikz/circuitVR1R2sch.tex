@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\begin{document}
+\begin{circuitikz}[american voltages, american currents, european resistors]
+\draw (0,0)  to[V,invert, l=$v$]  (0,3)
+to[short, -*] ++(0,0)node [above=0.5ex]{$1$}
+to[R=$R_1$] ++(3,0)
+to[short, i=$i$] ++(0.1,0)  to ++(0.7,0) 
+to[short,-*] ++(0,0) node [above=0.5ex]{$2$}
+to[R=$R_2$] ++(0,-3)
+to [short,-*] (0,0) node [left=0.5ex]{$0$} node[rground]{};
+
+\end{circuitikz}
+\end{document}
+

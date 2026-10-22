@@ -1,0 +1,78 @@
+\documentclass[border=0pt]{standalone}
+\usepackage[RPvoltages]{circuitikz}
+\usetikzlibrary{arrows,decorations.markings,arrows.meta}
+\newcommand{\bushere}[3]{% length, text above, text below
+    coordinate(tmp)
+    % go up and do an edge down
+    ++(0,#1) node[anchor=base]{#2} edge[line width=2.5pt] ++(0,{-1.88*#1})
+    % edges do not move the current point, go down to position the node
+    ++(0,{-1.88*#1}) node[below]{#3}
+    % go back to where we started
+    (tmp)
+}
+
+\newcommand{\redbushere}[3]{% length, text above, text below
+%    coordinate(tmp)
+    % go up and do an edge down
+    ++(0.07,#1) node[anchor=base]{#2} edge[red,dashed, line width=1.5pt]  ++(0,{-1.88*#1})
+    % edges do not move the current point, go down to position the node
+    ++(0,{-1.88*#1}) node[below]{#3}
+    % go back to where we started
+%    (tmp)
+}
+
+
+\begin{document}\sf
+%\ctikzset{sources/fill=gray!20, resistors/fill=gray!20}
+%\ctikzset{sources/fill=white, resistors/fill=white}
+%\tikzset{myarr/.style={line width=0.74pt,-{Triangle[width=6pt, length=9pt]}}}
+\tikzset{myarr/.style={line width=0.74pt,-{Triangle[width=6pt, length=9pt]}}}
+
+\begin{tikzpicture}[>=latex]% default line width
+%\draw [myarr](0,0) to (1.5,0);
+
+% Primer Bush_e
+\coordinate (B) at (1.5,0);
+\coordinate (B1) at (1.4,0);
+\coordinate (B2) at (1.4,0);
+\node[draw, line width=0.76pt, text=white, minimum width=3.6mm, minimum height=17.5mm, xshift=0.4mm] (dos) at (B) {};
+%\node[xshift=4.3mm, yshift=0.6mm] (e) at (B) {\Large $e$};
+\path (B2)   \bushere{1}{}{} ;
+\path (B1)   \redbushere{1}{}{} ;
+% segundo Bush_e
+\coordinate (C) at (6.5,0);
+\coordinate (C1) at (6.4,0);
+\coordinate (C2) at (6.4,0);
+\node[draw, line width=0.76pt, text=white, minimum width=3.6mm, minimum height=17.5mm, xshift=0.4mm] (dos) at (C) {};
+%\node[xshift=4.3mm, yshift=0.6mm] (e) at (C) {\Large $e$};
+\path (C2)   \bushere{1}{}{} ;
+\path (C1)   \redbushere{1}{}{} ;
+% 1 bus
+\draw[myarr] (0,0)node[xshift=4	ex,yshift=1.3ex]{$p_g$}to (B1);
+\draw[myarr,red] (B)++(0.22,0.55)node[xshift=3ex,yshift=1.3ex]{$p_{gd}$}to ++(1.1,0);
+\draw [myarr](B)++(0.22,-0.55)node[xshift=15ex,yshift=1.3ex]{$p_l$}to++(4.65,0) ;
+% 2bus
+\draw[myarr,red] (C)++(0.22,0.55)node[xshift=3ex,yshift=1.3ex]{$p_{do}$}to ++(1.1,0);
+\draw [myarr](C)++(0.22,-0.55)node[xshift=5ex,yshift=1.3ex]{$p_o$}to++(1.6,0) ;
+
+\end{tikzpicture}
+\end{document}
+
+
+
+
+
+
+\draw [myarr,red](B)	++(0,0.5)
+     to node[xshift=-0.5ex,yshift=1.3ex]{\color{black}$p_{gd}$} ++(1.25,0);
+\draw [myarr](B)node[xshift=-5ex,yshift=1.3ex]{$p_g$}++(0,-0.6)
+     to node[xshift=-0.5ex,yshift=1.3ex]{$p_l$} ++(5,0);
+\path (C)  \bushere{1}{}{} ;
+\path (C)  \redbushere{1}{}{} ;
+\draw [myarr,red](C)	++(0,0.5)
+     to node[xshift=-0.5ex,yshift=1.3ex]{\color{black}$p_{do}$} ++(1.25,0);
+\draw [myarr](C)++(0,-0.6)
+     to node[xshift=-0.5ex,yshift=1.3ex]{$p_o$} ++(1.8,0);
+
+\end{tikzpicture}
+\end{document}

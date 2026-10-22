@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2025/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: AbstractModeling.aux
+The style file: plain.bst
+Database file #1: abstract_systems.bib
+Repeated entry---line 760 of file abstract_systems.bib
+ : @book{laszlo1972introduction
+ :                             ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 840 of file abstract_systems.bib
+ :  year      = {2006}, 
+ :                      % Edición moderna recomendada, aunque el texto es del siglo XIII
+I'm skipping whatever remains of this entry
+Repeated entry---line 3262 of file abstract_systems.bib
+ : @article{morris1967art
+ :                       ,
+I'm skipping whatever remains of this entry
+Warning--can't use both author and editor fields in bodhi1993comprehensive
+Warning--empty publisher in aquinas_st_gnoseology
+Warning--can't use both author and editor fields in aristotle_metaphysics
+Warning--can't use both author and editor fields in zabarella2014methods
+You've used 69 entries,
+            2118 wiz_defined-function locations,
+            920 strings with 16810 characters,
+and the built_in function-call counts, 20178 in all, are:
+= -- 1966
+> -- 886
+< -- 3
++ -- 369
+- -- 287
+* -- 1321
+:= -- 3481
+add.period$ -- 231
+call.type$ -- 69
+change.case$ -- 323
+chr.to.int$ -- 0
+cite$ -- 73
+duplicate$ -- 803
+empty$ -- 1672
+format.name$ -- 287
+if$ -- 4175
+int.to.chr$ -- 0
+int.to.str$ -- 69
+missing$ -- 92
+newline$ -- 365
+num.names$ -- 141
+pop$ -- 382
+preamble$ -- 1
+purify$ -- 281
+quote$ -- 0
+skip$ -- 482
+stack$ -- 0
+substring$ -- 1039
+swap$ -- 95
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 218
+warning$ -- 4
+while$ -- 194
+width$ -- 71
+write$ -- 795
+(There were 3 error messages)

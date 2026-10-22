@@ -1,0 +1,46 @@
+\documentclass[border=5pt]{standalone}
+\usepackage[RPvoltages]{circuitikz}
+\usetikzlibrary{arrows,decorations.markings,arrows.meta}
+
+\newcommand{\bushere}[3]{% length, text above, text below
+    coordinate(tmp)
+    ++(0,#1) node[anchor=base]{#2} edge[line width=2.5pt] ++(0,{-1.88*#1})
+    ++(0,{-1.88*#1}) node[below]{#3}
+    (tmp)
+}
+
+\newcommand{\redbushere}[3]{% length, text above, text below
+    ++(0.07,#1) node[anchor=base]{#2} edge[red,dashed, line width=1.5pt]  ++(0,{-1.88*#1})
+    ++(0,{-1.88*#1}) node[below]{#3}
+}
+
+\begin{document}\sf
+\ctikzset{sources/fill=white, resistors/fill=white}
+\tikzset{myarr/.style={line width=0.74pt,-{Triangle[width=6pt, length=9pt]}}}
+
+\begin{tikzpicture}[>=latex]
+
+% --- GENERADOR COMO NODO LIMPIO ---
+\node[circle, draw, line width=0.6pt, minimum size=0.8cm] at (0,0) {};
+\node at (0,0) {G};
+
+\draw [myarr] (0,0)++(0.4,0) -- (1.5,0);
+
+\coordinate (B) at (1.5,0);
+\coordinate (B1) at (1.4,0);
+\coordinate (B2) at (1.4,0);
+\coordinate (C) at (6.5,0);
+\path (B)   \bushere{1}{}{} ;
+\draw [myarr](B)node[xshift=-4.2ex,yshift=1.3ex]{$p_g$}++(0,-0.6)
+     to node[xshift=-0.5ex,yshift=1.3ex]{$p_l$} ++(5,0);
+\path (C)  \bushere{1}{}{} ;
+\path (C)  \redbushere{1}{}{} ;
+\node[draw, line width=0.76pt, text=white, minimum width=3.6mm, minimum height=17.5mm, xshift=1.4mm] (dos) at (C) {};
+
+\draw [myarr,red](C)++(0.31,0.5)
+     to node[xshift=-0.5ex,yshift=1.3ex]{\color{black}$p_{ld}$} ++(1.2,0);
+
+\draw [myarr](C)++(0.31,-0.55)node[xshift=6ex,yshift=1.3ex]{$p_u$}to++(1.6,0) ;
+
+\end{tikzpicture}
+\end{document}

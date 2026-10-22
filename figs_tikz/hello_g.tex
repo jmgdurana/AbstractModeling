@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\tikzstyle{pix} = [minimum size=0pt,inner sep=0pt]
+\tikzstyle{cir} = [shape=circle,draw,minimum size=3ex,inner sep=2pt]
+\tikzstyle{blk} = [shape=rectangle, draw, minimum height=5ex, minimum width=3ex, inner sep=5pt]
+\tikzstyle{arw} = [draw, -latex]
+\definecolor{bblue}{RGB}{51, 51, 178}
+\definecolor{dblue}{RGB}{25, 25, 112} % dark blue
+\begin{document}
+\begin{tikzpicture}[semithick]
+  \draw[pix] (0,0)node(U){}
+  ++(2.3,0)node[blk](C) {Power Grid}
+  ++(2.3,0)node(A) {};
+  \draw[arw] (U) to node [above=-0.4ex]{$p_i$} (C);
+  \draw[arw] (C) to node [above=-0.4ex]{$p_o$} (A);
+% generator
+\coordinate(G) at (-0.4,0.5);
+\draw(G) circle (2ex) node{G};
+\draw[<-,dashed, bblue](G)+(0.5,0.2) to ++(5.3,0.2);
+% the user
+\coordinate(M) at (5.35,0.2);
+\node at (M){
+\includegraphics[width=0.12	\linewidth]{girl3}};
+\coordinate(U) at (8.5,0.2);
+\node at (U){
+ \scriptsize
+ \def\arraystretch{0.8}
+
+${\color{bblue}\left\{ \hspace{-1.3ex}
+ \begin{tabular}{l}\\[-1.2ex]
+  Hi G! \\
+  Could you \textit{generate} \\
+  a sufficient amount of power $p_i$ \\
+  in order to \textit{deliver} my \textit{demand} $p_o$\\
+  please?
+ \end{tabular}\right.}$
+};
+\end{tikzpicture}
+
+\end{document}

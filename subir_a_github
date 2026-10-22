@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Colores para la terminal
+ROJO='\033[0;31m'
+VERDE='\033[0;32m'
+AZUL='\033[0;34m'
+NC='\033[0m' # Sin color
+
+echo -e "${AZUL}📝 Introduce el mensaje para describir tus cambios y pulsa Enter:${NC}"
+read -r MENSAJE
+
+# 1. Intentar hacer el commit
+git add .
+# Guardamos el mensaje de Git en una variable para analizarlo
+OUTPUT_COMMIT=$(git commit -m "$MENSAJE" 2>&1)
+
+if [[ $OUTPUT_COMMIT == *"nada para hacer commit"* ]]; then
+    echo -e "${AZUL}ℹ️ No hay cambios nuevos en los archivos, pero revisaremos si hay subidas pendientes...${NC}"
+fi
+
+# 2. Intentar subir a GitHub y comprobar si funciona
+echo -e "${AZUL}Subiendo cambios a GitHub...${NC}"
+if git push origin main; then
+    echo -e "${VERDE}🚀 ¡Todo subido con éxito a GitHub!${NC}"
+else
+    echo -e "${ROJO}❌ Error: No se pudo subir a GitHub. Revisa tu conexión o tus credenciales (Token).${NC}"
+    exit 1
+fi
