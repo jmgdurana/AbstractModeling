@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.5.24)  22 OCT 2026 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.5.24)  23 OCT 2026 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1392,11 +1392,11 @@ L3 programming layer <2025-01-18>
 Here is how much of TeX's memory you used:
  28860 strings out of 475043
  721670 string characters out of 5763019
- 1240914 words of memory out of 5000000
+ 1240905 words of memory out of 5000000
  51398 multiletter control sequences out of 15000+600000
  589669 words of font info for 115 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
- 88i,19n,92p,2578b,2341s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,19n,92p,1597b,2341s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -1437,7 +1437,7 @@ super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1095.pfb><
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on AbstractModeling.pdf (91 pages, 4412275 bytes).
+Output written on AbstractModeling.pdf (91 pages, 4412418 bytes).
 PDF statistics:
  1378 PDF objects out of 1440 (max. 8388607)
  692 compressed objects within 7 object streams
